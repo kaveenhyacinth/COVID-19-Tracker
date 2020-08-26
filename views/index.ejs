@@ -1,0 +1,126 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covid-19 Index | Muffinslab</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/assets/styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <form action="/index" method="POST">
+        <input type="search" placeholder="Search a country" name="country" />
+        <input type="submit" value="Search" />
+      </form>
+      <span>Covid-19</span>
+      <span>World Index</span>
+      <span>by Muffinslab</span>
+    </header>
+
+    <main>
+      <div class="card-wrapper">
+        <div class="card">
+          <span><i class="fas fa-user-injured"></i></span>
+          <span class="title">Confirmed Total Cases</span>
+          <span class="count"><%= data.cases %></span>
+        </div>
+        <div class="card">
+          <span><i class="fas fa-heart-broken"></i></span>
+          <span class="title">Confirmed Total Deaths</span>
+          <span class="count"><%= data.deaths %></span>
+        </div>
+        <div class="card">
+          <span><i class="fas fa-grin-hearts"></i></span>
+          <span class="title">Confirmed Recoveries</span>
+          <span class="count"><%= data.recovered %></span>
+        </div>
+        <div class="card">
+          <span><i class="fas fa-virus"></i></span>
+          <span class="title">Total Active Cases</span>
+          <span class="count"><%= data.active_cases[0].currently_infected_patients %></span>
+        </div>
+        <div class="card">
+          <span><i class="fas fa-shield-virus"></i></span>
+          <span class="title">Total Mild cases</span>
+          <span class="count"><%= data.active_cases[0].inMidCondition %></span>
+        </div>
+        <div class="card">
+          <span><i class="fas fa-biohazard"></i></span>
+          <span class="title">Total Critical cases</span>
+          <span class="count"><%= data.active_cases[0].criticalStates %></span>
+        </div>
+      </div>
+
+      <div id="card-wrapper">
+        <table id="index" border="1">
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Total Cases</th>
+              <th>New Cases</th>
+              <th>Active Cases</th>
+              <th>Total Deaths</th>
+              <th>New Deaths</th>
+              <th>Critical</th>
+              <th>Total Recoveries</th>
+              <th>Total Tests</th>
+              <th>Cases per 1 Million</th>
+              <th>Deaths per 1 Million</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% data.table[0].forEach(stat => { %>
+            <% if(stat.Country != "World") { %>
+            <% if(stat.Country != "Total:") { %> 
+            <tr>
+              <td><%= stat.Country %></td>
+              <td><%= stat.TotalCases %></td>
+              <td>
+                <%= stat.NewCases %>
+                <% if(stat.NewCases != "") { %>
+                <i style="color: red;" class="fas fa-caret-up"></i>
+                <% } %>
+                </td>  
+              <td><%= stat.ActiveCases %></td>
+              <td><%= stat.TotalDeaths %></td>
+              <td>
+                  <%= stat.NewDeaths %>
+                  <% if(stat.NewDeaths != "") { %>
+                    <i style="color: red;" class="fas fa-caret-up"></i>
+                    <% } %>
+                </td>
+                <td><%= stat.Serious_Critical %></td>
+                
+              <td>
+                  <%= stat.TotalRecovered %>
+                  <% if(stat.TotalRecovered != "" && stat.TotalRecovered != "N/A") { %>
+                    <i style="color: green;" class="fas fa-caret-down"></i>
+                    <% } %>
+                </td>
+                <td><%= stat.TotalTests %></td>
+              <td><%= stat.TotCases_1M_Pop %></td>
+              <td><%= stat.Deaths_1M_pop %></td>
+            </tr>
+            <% }  %>
+            <% }  %>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+      <div id="up"><a href="#"><i class="fas fa-chevron-circle-up"></i></a></div>
+    </main>
+
+    <footer>
+      <p>Muffinslab &copy; 2020</p>
+    </footer>
+  </body>
+</html>

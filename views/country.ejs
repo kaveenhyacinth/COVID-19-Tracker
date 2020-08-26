@@ -1,0 +1,79 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/assets/styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <form action="/index" method="POST">
+        <input type="search" placeholder="Search a country" name="country" />
+        <input type="submit" value="Search" />
+      </form>
+      <span>Covid-19</span>
+      <span>World Index</span>
+      <span>by Muffinslab</span>
+    </header>
+
+    <main>
+      <div id="back">
+        <a href="/"><i class="fas fa-chevron-circle-left"></i></a>
+      </div>
+      <div id="title">
+        <img src="<%= data.flag %> " alt="flag" />
+        <span id="title"><%= data.country.replace(/\-/g, " ").toUpperCase() %></span>
+      </div>
+      
+
+      <div class="card-wrapper">
+        <div class="card">
+          <span><i class="fas fa-user-injured"></i></span>
+          <span class="title">Confirmed Total Cases</span>
+          <span class="count"><%= data.cases %></span>
+        </div>
+        <div class="card">
+          <span><i class="fas fa-heart-broken"></i></span>
+          <span class="title">Confirmed Total Deaths</span>
+          <span class="count"><%= data.deaths %></span>
+        </div>
+        <div class="card">
+          <span><i class="fas fa-grin-hearts"></i></span>
+          <span class="title">Confirmed Recoveries</span>
+          <span class="count"><%= data.recovered %></span>
+        </div>
+        <% if(data.active_cases[0] != null) { %>
+        <div class="card">
+          <span><i class="fas fa-virus"></i></span>
+          <span class="title">Total Active Cases</span>
+          <span class="count"><%= data.active_cases[0].currently_infected_patients %></span>
+        </div>
+        <div class="card">
+          <span><i class="fas fa-shield-virus"></i></span>
+          <span class="title">Total Mild cases</span>
+          <span class="count"><%= data.active_cases[0].inMidCondition %></span>
+        </div>
+        <div class="card">
+          <span><i class="fas fa-biohazard"></i></span>
+          <span class="title">Total Critical cases</span>
+          <span class="count"><%= data.active_cases[0].criticalStates %></span>
+        </div>
+        <% } %>
+      </div>
+    </main>
+
+    <footer>
+      <p>Muffinslab &copy; 2020</p>
+    </footer>
+  </body>
+</html>

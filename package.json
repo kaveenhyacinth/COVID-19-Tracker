@@ -1,0 +1,24 @@
+{
+  "name": "covid19",
+  "version": "1.0.0",
+  "description": "The covid 19 index",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "covid-19",
+    "rapid api"
+  ],
+  "author": "Kaveen Hyacinth",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "covid19-api": "^1.1.9",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "unirest": "^0.6.0"
+  }
+}

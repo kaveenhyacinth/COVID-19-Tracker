@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Maven Pro', sans-serif;
+    text-decoration: none;
+}
+
+html {
+    width: 100%;
+}
+
+
+header {
+    width: 100%;
+    background-color:  #002A4C;
+    color: white;
+    padding: 20px 50px;
+}
+
+span {
+    display: block;
+    letter-spacing: 2px;
+}
+
+header:hover span {
+    color: #71C1FF;
+}
+
+span:nth-child(1) {
+    font-size: 30px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+span:nth-child(2) {
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+span:nth-child(3) {
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+form {
+    float: right;
+    width: 50%;
+    line-height: 50px;
+    text-align: right;
+}
+
+
+form input[type=search] {
+    display: inline-block;
+    width: 30%;
+    line-height: 30px;
+    text-align: center;
+    color: #557F7E;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: .5s ease;
+}
+
+form input[type=search]:hover {
+    width: 60%;
+}
+
+form input[type=search]::placeholder {
+    margin: 0 10%;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #557F7E;
+}
+
+form input[type=submit] {
+    display: inline-block;
+    width: 10%;
+    color: white;
+    line-height: 30px;
+    border: 1px solid #067F7A;
+    background-color: #067F7A;
+    border-radius: 10px;
+    transition: .3s ease;
+}
+
+form input[type=submit]:hover {
+    color: #067F7A;
+    border: 1px solid #067F7A;
+    background-color: white;
+}
+
+main {
+    width: 100%;
+    padding: 0 70px 12px 70px;
+    min-height: 73vh;
+}
+
+div#back {
+    display: inline-block;
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    padding: 20px;
+}
+
+div#up {
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+}
+
+div#up i,
+div#back i {
+    font-size: 32px;
+    color: #002A4C;
+    transition: .2s ease;
+}
+
+div#up i:hover,
+div#back i:hover {
+    font-size: 36px;
+    color: #067F7A;
+}
+
+div#title {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    text-align: center;
+    display: inline-block;
+}
+
+span#title {
+    display: inline-block;
+    padding: 20px;
+    font-weight: bolder;
+    font-size: 52px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+div.card-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 5px;
+    padding: 20px 0;
+}
+
+div.card {
+    text-align: center;
+    padding: 20px;
+    background-color: #067F7A;
+    color: #002A4C;
+}
+
+div.card:hover {
+    background-color: #002A4C;
+    color: #067F7A;
+}
+
+div.card:hover i {
+    color: #067F7A;
+}
+
+span > i {
+    color: #002A4C;
+}
+
+span.count {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+
+table {
+    padding: 20px;
+}
+
+table#index {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-collapse: collapse;
+}
+
+table#index th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color:#002A4C;
+    color: white;
+  }
+
+table#index tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr td,
+table#index tr td {
+    padding: 15px 10px;
+}
+
+table#index tr td {
+    text-align: center;
+}
+
+table#index tr:hover {
+    background-color: #B4CED9;
+}
+
+div#data {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+div#data p {
+    display: inline-block;
+}
+
+div#data p:nth-child(1) {
+    float: right;
+}
+
+/* footer */
+
+footer p {
+    width: 100%;
+    padding: 20px 50px;
+    background-color: #002A4C;
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 20px;
+}
+
+footer:hover p {
+    color: #71C1FF;
+}

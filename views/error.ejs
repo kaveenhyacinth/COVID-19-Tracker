@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/assets/styles/main.css" />
+    <style>
+
+        html {
+            background-color: #067F7A;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #err-content {
+            text-align: center;
+        }
+
+        #err-content > i {
+            font-size: 100px;
+            padding: 10px;
+            color: #002A4C;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #002A4C;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <form action="/index" method="POST">
+        <input type="search" placeholder="Search a country" name="country" />
+        <input type="submit" value="Search" />
+      </form>
+      <span>Covid-19</span>
+      <span>World Index</span>
+      <span>by Muffinslab</span>
+    </header>
+
+    <main>
+        <div id="back">
+            <a href="/"><i class="fas fa-chevron-circle-left"></i></a>
+        </div>
+        <div id="err-content">
+            <i class="fas fa-heart-broken"></i>
+            <h1><%= msg %></h1>
+        </div>
+        
+    </main>
+
+    <footer>
+      <p>Muffinslab &copy; 2020</p>
+    </footer>
+  </body>
+</html>
